@@ -1,0 +1,44 @@
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #e9ebee;
+    color: white;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 16px;
+}
+
+.heading {
+    font-family: 'Lobster', serif;
+    font-size: 2em;
+}
+
+#tweet-section {
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+#tweet-section p {
+    background-color: white;
+    color: black;
+    margin: 10px 0 10px 0;
+    padding: 15px;
+}
+
+#timeline-section {
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
+#timeline-section p {
+    background-color: white;
+    color: black;
+    margin: 10px 0 10px 0;
+    padding: 15px;
+}
+
+.hide{
+    display: none;
+}

@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Twittler</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-  </head>
-  <body>
-    <script>
+    <script src="main.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="#"><h3 class="heading">Twittler</h3></a>
+    </div>
+</nav>
+<div class="container d-flex justify-content-between" id="tweet-area">
+    <div id="tweet-section" class="mx-auto"></div>
+</div>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+<div class="container d-flex justify-content-between" id="timeline-area">
+    <div id="timeline-section" class="mx-auto hide"></div>
+</div>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
 
-      });
-
-    </script>
-  </body>
+</body>
 </html>
