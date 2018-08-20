@@ -15,6 +15,11 @@ body {
     font-size: 2em;
 }
 
+.input-group {
+    margin: 20px 0 20px 0;
+    width: 100%;
+}
+
 #tweet-section {
     margin: 20px 0 20px 0;
     width: 100%;

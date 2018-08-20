@@ -12,13 +12,23 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <script src="main.js"></script>
+    <script src="node_modules/moment/moment.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container d-flex justify-content-between">
-        <a class="navbar-brand" href="#"><h3 class="heading">Twittler</h3></a>
+        <a class="navbar-brand" href="index.html"><h3 class="heading">Twittler</h3></a>
     </div>
 </nav>
+
+<div class="container d-flex justify-content-between" id=input-area">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Tweet" maxlength="140" aria-label="User's tweet" id="user-tweet">
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button" id="tweet-button">Tweet</button>
+        </div>
+    </div>
+</div>
 <div class="container d-flex justify-content-between" id="tweet-area">
     <div id="tweet-section" class="mx-auto"></div>
 </div>

@@ -18,24 +18,17 @@ $(document).ready(function () {
             }
             dataArrLength = streams.home.length;
         }
-    }, 1000);
+        $('.time').each(function () {
+            $(this).html(moment($(this).attr('data')).from(Date.now()));
+        });
+    }, 30000);
 
     function getTweet(tweet, user) {
         var $tweet = $('<p></p>');
         var tweetTime = tweet.created_at;
-        var date = tweetTime.getDate();
-        var month = monthsList[tweetTime.getMonth()];
-        var year = tweetTime.getFullYear();
-        var hour = tweetTime.getHours();
-        if (hour < 10) {
-            hour = "0" + hour;
-        }
-        var minutes = tweetTime.getMinutes();
-        if (minutes < 10) {
-            minutes = "0" + minutes;
-        }
         var link = '<a class="link" href = #>' + user + '</a>';
-        $tweet.html('@' + link + ' . ' + month + ' ' + date + ' ' + year + ' ' + hour + ':' + minutes + ' : ' + tweet.message);
+        var formattedTime = moment(tweetTime).from(Date.now());
+        $tweet.html('@' + link + ' . ' + '<span class="time" data="'+tweetTime+'">'+formattedTime+'</span>' + ' : ' + tweet.message);
         return $tweet;
     }
 
@@ -61,6 +54,15 @@ $(document).ready(function () {
         event.preventDefault();
         return false;
     });
+
+    $('#tweet-button').click(function () {
+        var tweet = $('#user-tweet').val();
+        var $tweet = $('<p></p>');
+        var tweetTime = new Date();
+        var formattedTime = moment(tweetTime).from(Date.now());
+        $tweet.html('@guestUser' + ' . ' + '<span class="time" data="'+tweetTime+'">'+formattedTime+'</span>' + ' : ' + tweet);
+        $tweet.prependTo("#tweet-section:first-child");
+    })
 
 });
 
